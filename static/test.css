@@ -1,0 +1,29 @@
+ body{
+background-image: url('C:\Flask demo\a\static\img\homebg.png') 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+input[type=number]:focus {
+    background-color: blue;
+}
+
+
+input[type=number] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+}
+
+input[type=submit]{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}

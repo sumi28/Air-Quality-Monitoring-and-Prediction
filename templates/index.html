@@ -1,0 +1,72 @@
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="static/css/test.css">
+<link rel="icon" href="data:,">
+<script>
+function ValidateForm() {
+var day = document.validate.day; 
+var time = document.validate.time; 
+var location = document.validate.location; 
+if(day.selectedIndex < 1)
+{
+window.alert("Please select day"); 
+day.focus();
+return false; 
+}
+if (time.value == "") 
+{ 
+window.alert("Please enter a valid time.");
+ time.focus();
+return false; 
+} 
+if(location.selectedIndex < 1)
+{
+alert("Please select location"); 
+location.focus();
+return false; 
+}
+return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>AIR POLLUTION MONITORING SYSTEM </h1><br>
+<form name="validate" method='POST' action="/sendco" onsubmit="return ValidateForm()">
+<h2>Enter day of week</h2> 
+<select name="day" id="a1">
+  <option value="empty"></option>
+  <option value="1">Monday</option>
+  <option value="2">Tuesday</option>
+  <option value="3">Wednesday</option>
+  <option value="4">Thursday</option>
+  <option value="5">Friday</option>
+  <option value="6">Saturday</option>
+  <option value="7">Sunday</option>
+  </select>
+  <br>
+<h2>Enter time in hrs </h2> <input  type="number" min="1" max="23" name="time">
+<br>
+<h2>Enter Location</h2> 
+<select name="location" id="a2">
+  <option value="empty"></option>
+  <option value="1">Chembur</option>
+  <option value="2">Kurla</option>
+  <option value="3">Turbhe</option>
+  <option value="4">Vashi</option>
+  <option value="5">Panvel</option>
+  <option value="6">Ulhas</option>
+  <option value="7">Thane</option>
+  <option value="8">Khar</option>
+</select>
+<br><br>
+<input type="submit" class="button1" value="Predict CO value">
+<input type="submit" class="button2" value="Predict CO2 value" formaction="/sendcot">
+<input type="submit" class="button3" value="Predict Smoke value" formaction="/sendno">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<html>
+<head>
+	<style type="text/css">
+		h1{
+			text-align: center;
+		}
+		table{
+			width: 80%;
+			height: 80%;
+		}
+		th,td{
+			text-align: center;
+			padding: 8px;
+		}
+
+		th{
+			background-color: #990066;
+			color: white;
+					}
+							td{
+			background-color: #FFCCFF;
+			color: black;
+					}
+	</style>
+	</head>
+
+<body style="background-image: url(../static/img/download.jpg); background-repeat: no-repeat; background-size: 100% 100%;">
+<h1 style="color: white;">POLLUTION ANALYSIS REPORT</h1>
+<table border="1" align="center">
+	<tr>
+		<th>
+			Generated on
+		</th>
+		<td>
+			<p id="date"></p>
+			<script type="text/javascript">
+				document.getElementById("date").innerHTML=Date();
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<th>
+			Value for 
+		</th>
+		<td>
+			{{pollutant}}
+		</td>
+	</tr>
+	<tr>
+		<th>
+			Day
+		</th>
+		<td>
+		<script type="text/javascript">
+		switch({{day}}){
+			case 1:
+			document.write('Monday');
+			break;
+			case 2:
+			document.write('Tuesday');
+			break;
+			case 3:
+			document.write('Wednesday');
+			break;
+			case 4:
+			document.write('Thursday');
+			break;
+			case 5:
+			document.write('Friday');
+			break;
+			case 6:
+			document.write('Saturday');
+			break;
+			case 7:
+			document.write('Sunday');
+			break;
+		}			
+		</script>
+	</td>
+	</tr>
+	<tr>
+		<th>
+			Time(in hrs)
+		</th>
+		<td>
+			{{time}}
+		</td>
+	</tr>
+	<tr>
+		<th>
+			Location
+		</th>
+		<td>
+			<script type="text/javascript">
+	switch({{location}}){
+		case 1:
+		document.write('Chembur');
+		break;
+		case 2:
+		document.write('Kurla');
+		break;
+		case 3:
+		document.write('Turbhe');
+		break;
+		case 4:
+		document.write('Vashi');
+		break;
+		case 5:
+		document.write('Panvel');
+		break;
+		case 6:
+		document.write('Ulhas');
+		break;
+		case 7:
+		document.write('Thane');
+		break;
+		case 8:
+		document.write('Khar');
+		break;
+	}	
+	</script>
+</td>
+</tr>
+<tr>
+	<th>
+		Predicted Value
+	</th>
+	<td>
+		{{predict}}
+	</td>
+</tr>
+<tr>
+	<th>
+		Threshold Value
+	</th>
+	<td>
+		{{threshold}}
+	</td>
+</tr>
+<tr>
+<th>
+	Result
+</th>
+<td style="color: red">
+	{{disp}}
+</td>
+</tr>
+</table>
+</body>
+</html>
